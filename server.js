@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require('cors');
 const app = express();
 const mysql = require("mysql");
-/* Configuración principal de la app */
+/* Configuración principal de la app -----*/
 var env = process.env.NODE_ENV || 'development',
   config = require('./src/config/config')[env],
   port = config.server.port,
