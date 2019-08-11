@@ -14,6 +14,25 @@ const Aircraft = require("../models/aircraftModel");
 */
 
 /**
+ * valida que el correo ya este reg
+ */ 
+exports.validaExisteUser = where => {      
+  return Users.count({
+    where: where
+  });
+};
+
+
+/**
+ *  Crear nuevo usuario
+ */
+exports.createUser = data => {      
+  return Users.create({
+    data
+  });
+};
+
+/**
  * Login
  */ 
 exports.login = where => {      

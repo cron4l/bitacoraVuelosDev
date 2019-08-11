@@ -11,11 +11,13 @@ module.exports = class Respuesta {
   }
   toSuccess(r) {
     this.correcto = true;
-    this.statusClass = 'success';    
-    if(r){
-      this.mensaje = r.dataValues.mensaje;
-      delete r.dataValues.mensaje;
-    }  
+    this.statusClass = 'success';
+    if (r) {
+      if (!r instanceof Array) {        
+        this.mensaje = r.dataValues.mensaje;
+        delete r.dataValues.mensaje;
+      }
+    }
   }
   toWarning() {
     this.correcto = false;
